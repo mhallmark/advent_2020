@@ -36,16 +36,16 @@ let passIsValidPerOldSledJobRequirements (req: Requirement, pass: string) = req.
 
 let passIsValidPerTobogganCorporatePolicy (req: Requirement, pass: string) = req.ValidateByEXORPosition pass
 
-let passWithReqs =
+let passesWithReqs =
     File.ReadAllLines("data/day2.txt")
     |> Seq.map parse
 
-passWithReqs
+passesWithReqs
 |> Seq.filter passIsValidPerOldSledJobRequirements
 |> Seq.length
 |> printfn "Valid Passwords Per Sled Job Policy: %i"
 
-passWithReqs
+passesWithReqs
 |> Seq.filter passIsValidPerTobogganCorporatePolicy
 |> Seq.length
 |> printfn "Valid Passwords Per Toboggan Corporate Policy: %i"
