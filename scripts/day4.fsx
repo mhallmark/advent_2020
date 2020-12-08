@@ -43,6 +43,8 @@ let collectBatches (lines: string array) =
         else
             do curBatch <- line :: curBatch
 
+    batches <- curBatch :: batches
+
     batches
 
 File.ReadAllLines("data/day4.txt")
